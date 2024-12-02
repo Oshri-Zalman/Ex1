@@ -21,6 +21,7 @@ public class Ex1 {
             int ans = -1;
             // add your code here
 
+
             ////////////////////
             return ans;
         }
@@ -32,7 +33,6 @@ public class Ex1 {
         public static boolean isNumber(String a) {
             boolean ans = true;
             // add your code here
-
             ////////////////////
             return ans;
         }
