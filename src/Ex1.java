@@ -10,33 +10,46 @@
  * “b2”, “0b1”, “123b”, “1234b11”, “3b3”, “-3b5”, “3 b4”, “GbG”, "", null,
  * You should implement the following static functions:
  */
+
 public class Ex1 {
-        /**
-         * Convert the given number (num) to a decimal representation (as int).
-         * It the given number is not in a valid format returns -1.
-         * @param num a String representing a number in basis [2,16]
-         * @return
-         */
-        public static int number2Int(String num) {
-            int ans = -1;
-            // add your code here
+    /**
+     * Convert the given number (num) to a decimal representation (as int).
+     * It the given number is not in a valid format returns -1.
+     *
+     * @param num a String representing a number in basis [2,16]
+     * @return
+     */
+    public static int number2int(String num) {
+        int ans = -1;
+        return ans;
+    }
 
-
-            ////////////////////
-            return ans;
+    /**
+     * This static function checks if the given String (g) is in a valid "number" format.
+     *
+     * @param a a String representing a number
+     * @return true iff the given String is in a number format
+     */
+    public static boolean isNumber(String a) {
+        boolean ans = true;
+        String[] Halfs = a.split("b");
+        if (Halfs.length != 2) {
+            return false;
         }
-        /**
-         * This static function checks if the given String (g) is in a valid "number" format.
-         * @param a a String representing a number
-         * @return true iff the given String is in a number format
-         */
-        public static boolean isNumber(String a) {
-            boolean ans = true;
-            // add your code here
-            ////////////////////
-            return ans;
+        String numbers = Halfs[0];
+        String basis = Halfs[1];
+        if (numbers.isEmpty() || !numbers.matches("[0-9, A-G]")) {
+            return false;
         }
-
+        if (!basis.matches("[2-9, A-G]")) {
+            return false;
+        }
+        if (a == null || a.isEmpty()) return false;
+        if (a.startsWith("-")) return false;
+        if (!a.contains("b") && !a.matches("[0-9]")) return false;
+        if (a.startsWith("b")) return false;
+        return ans;
+    }
         /**
          * Calculate the number representation (in basis base)
          * of the given natural number (represented as an integer).

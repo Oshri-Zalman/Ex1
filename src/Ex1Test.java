@@ -1,4 +1,4 @@
-package assignments.ex1;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,12 +11,12 @@ public class Ex1Test {
         @Test
         void computeNumberTest() {
             String s2 = "1011b2";
-            int v = Ex1.number2Int(s2);
+            int v = Ex1.number2int(s2);
             assertEquals(v,11);
             String s10 = "1011bA";
-            v = Ex1.number2Int(s10);
+            v = Ex1.number2int(s10);
             s2 = Ex1.int2Number(v,2);
-            int v2 = Ex1.number2Int(s2);
+            int v2 = Ex1.number2int(s2);
             assertEquals(v,v2);
             assertTrue(Ex1.equals(s10,s2));
         }
