@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Ex1Main {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
       String num1 = "", num2 = "", quit = "quit";
 
@@ -40,18 +40,18 @@ public class Ex1Main {
                             if (base < 2 || base > 16) {
                                 System.out.println("ERR: wrong base, should be [2,16], got (" + base + ")");
                             } else {
-                                int sum = value1 + value2;
-                                int product = value1 * value2;
-                                String sumInBase = Ex1.int2Number(sum, base);
-                                String productInBase = Ex1.int2Number(product, base);
+                              int sum = value1 + value2;
+                              int product = value1 * value2;
+                              String sumInBase = Ex1.int2Number(sum, base);
+                              String productInBase = Ex1.int2Number(product, base);
 
-                                System.out.println(num1 + " + " + num2 + " = " + sumInBase);
-                                System.out.println(num1 + " * " + num2 + " = " + productInBase);
+                              System.out.println(num1 + " + " + num2 + " = " + sumInBase);
+                              System.out.println(num1 + " * " + num2 + " = " + productInBase);
 
-                                String[] numbers = {num1, num2, sumInBase, productInBase};
-                                int maxIndex = Ex1.maxIndex(numbers);
-                                String maxNumber = numbers[maxIndex];
-                                System.out.println("Max number over [" + String.join(",", numbers) + "] is: " + maxNumber);
+                              String[] numbers = {num1, num2, sumInBase, productInBase};
+                              int maxIndex = Ex1.maxIndex(numbers);
+                              String maxNumber = numbers[maxIndex];
+                              System.out.println("Max number over [" + String.join(",", numbers) + "] is: " + maxNumber);
                             }
                         }
                     }

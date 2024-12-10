@@ -3,10 +3,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * This JUnit class represents a very partial test class for Ex1.
- * Make sure you complete all the needed JUnits
- */
 public class Ex1Test {
         @Test
         void computeNumberTest() {
@@ -22,7 +18,7 @@ public class Ex1Test {
         }
 
         @Test
-        void isBasisNumberTest() {
+        void isBasisNumberTest() { // test that check if the format of the number is ok (from the function "isNumber").
             String[] good = {"1", "1b2", "01b2", "123bA", "ABbG", "0bA"};
             for(int i=0;i<good.length;i=i+1) {
                 boolean ok = Ex1.isNumber(good[i]);
@@ -34,6 +30,7 @@ public class Ex1Test {
                 assertFalse(not_ok);
             }
         }
+
         @Test
         void int2NumberTest() {
            // implement this test
@@ -43,5 +40,4 @@ public class Ex1Test {
             // implement this test
         }
 
-        // Add additional test functions - test as much as you can.
-    }
+}
