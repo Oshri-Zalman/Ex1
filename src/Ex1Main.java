@@ -16,27 +16,25 @@ public class Ex1Main {
             System.out.println();
             System.out.println("Ex1 class solution:");
             System.out.println("Enter a string as number#1 (or \"quit\" to end the program): ");
-            num1 = sc.next();
+            num1 = sc.nextLine();
             if (!num1.equals("quit")) {
                 boolean num1format = Ex1.isNumber(num1);
                 if (num1format) {
                     System.out.println("its in the format good job!");
                     System.out.println("Enter a string as number#2 (or \"quit\" to end the program): ");
-                    num2 = sc.next();
+                    num2 = sc.nextLine();
+
                     if (!num2.equals("quit")) {
                         boolean num2format = Ex1.isNumber(num2);
                         if (num2format) {
                             System.out.println("its in the format good job!");
-                        }
-                        else {
+                        } else {
                             System.out.println("its isnt in the format try again!");
                         }
                     }
-                    }
-                else {
-                    System.out.println("its isnt format try again!");
+                } else {
+                    System.out.println("its isnt in the format try again!");
                 }
-
             }
         }
         System.out.println("quiting now...");

@@ -32,24 +32,52 @@ public class Ex1 {
      */
     public static boolean isNumber(String a) {
         boolean ans = true;
+        if (a == null || a.isEmpty()) return false;
+        if (a.startsWith("-") || a.startsWith("b") || a.contains(" ")) return false;
+        if (!a.contains("b")) {
+            return a.matches("[0-9]+");
+        }
         String[] Halfs = a.split("b");
         if (Halfs.length != 2) {
             return false;
         }
-        String numbers = Halfs[0];
-        String basis = Halfs[1];
-        if (numbers.isEmpty() || !numbers.matches("[0-9, A-G]")) {
+        String numbers = Halfs[0]; // the numbers of "a"
+        String basis = Halfs[1]; // the basis of "a"
+
+        if (!basis.matches("[2-9,A-G]")) { // if the basis isn't 1 char from the example its false.
             return false;
         }
-        if (!basis.matches("[2-9, A-G]")) {
+        int basisint;
+        if (Character.isDigit(basis.charAt(0))) {
+            // if the basis is number
+            basisint = Integer.parseInt(basis);
+        } else {
+            // if the basis is letter (A-G)
+            basisint = basis.charAt(0) - 'A' + 10;
+        }
+
+        if (basisint < 2 || basisint > 16) { // checks if the basis in the range of 2 until 16.
             return false;
         }
-        if (a == null || a.isEmpty()) return false;
-        if (a.startsWith("-")) return false;
-        if (!a.contains("b") && !a.matches("[0-9]")) return false;
-        if (a.startsWith("b")) return false;
+        char[] chars = numbers.toCharArray(); // convert the numbers to chars.
+        for (int i = 0; i < chars.length; i++) {
+            char ch = chars[i];
+            int value;
+
+            if (Character.isDigit(ch)) { // calculate the value of the char
+                value = ch - '0'; // if its number (0-9)
+            } else {
+                value = ch - 'A' + 10; // if its letter (A-F)
+            }
+
+            if (value >= basisint) { // check if the number is bigger then the basis
+                return false;
+            }
+        }
+
         return ans;
     }
+
         /**
          * Calculate the number representation (in basis base)
          * of the given natural number (represented as an integer).
